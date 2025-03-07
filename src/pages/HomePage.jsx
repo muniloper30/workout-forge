@@ -8,13 +8,6 @@ const HomePage =  () =>{
 
       <NavBar/>
 
-
-
-
-    
-
-
-
     </div>
 
       
