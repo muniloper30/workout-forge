@@ -35,12 +35,12 @@ const WorkoutsPage = () => {
 
  // Si estamos cargando, mostramos un mensaje de carga
  if (loading) {
-   return <div>Cargando workouts...</div>;
+   return <div className="text-3xl flex items-center justify-center h-screen">Cargando<br /> workouts...</div>;
  }
 
  // Si ocurre un error, lo mostramos
  if (error) {
-   return <div>Error: {error}</div>;
+   return <div className="text-3xl flex items-center justify-center h-screen">Error: {error}</div>;
  }
 
  

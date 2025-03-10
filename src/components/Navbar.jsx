@@ -18,7 +18,7 @@ const NavBar = () => {
            <div className="flex justify-between items-center">
                 <div className="flex items-center flex-shrink-0"> {/* Contenedor img logo y nombre app */}
                     <img src= {logoNavBar} alt="Workout Forge Logo" className="h-15 w-15 mr-2" /> {/* Logo de la web */}
-                    <span className="text-3xl tracking-tight font-[Saira]">Workout Forge</span>
+                    <a href='/' className="text-3xl cursor-pointer px-2 py-2 tracking-tight font-[Saira] hover:bg-[#E13B3B] transition duration-500">Workout Forge</a>
                 </div>
                 <ul className='hidden lg:flex ml-14 space-x-12'> {/* Contenedor de los links de navegación */}
                    <li>
