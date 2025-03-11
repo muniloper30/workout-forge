@@ -1,11 +1,12 @@
-import  NavBar  from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
+import FeaturesSection from '../components/FeaturesSection';
+
 
 const HomePage =  () =>{
   return (
     <div>
-      <NavBar/>
       <HeroSection/>
+      <FeaturesSection/>
     </div>
 
       

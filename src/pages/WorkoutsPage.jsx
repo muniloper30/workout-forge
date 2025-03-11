@@ -1,114 +1,130 @@
-import NavBar from "../components/Navbar";
-import {useState, useEffect} from 'react';
 
-
-
+import { useState, useEffect } from "react";
 
 const WorkoutsPage = () => {
+  // Estados principales
+  const [workouts, setWorkouts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
+  // Estados para la paginación
+  const [currentPage, setCurrentPage] = useState(1);
+  const workoutsPerPage = 9; // Cantidad de workouts por página
 
- // Crear un state para almacenar los datos de workouts
- const [workouts, setWorkouts] = useState([]);
- const [loading, setLoading] = useState(true); // Para mostrar un mensaje de carga mientras obtenemos los datos
- const [error, setError] = useState(null); // Para manejar errores
+  useEffect(() => {
+    const fetchWorkouts = async () => {
+      try {
+        const response = await fetch("https://workouts-fit-api.vercel.app/api/workouts");
+        if (!response.ok) {
+          throw new Error("Error al obtener los workouts.");
+        }
+        const data = await response.json();
+        setWorkouts(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchWorkouts();
+  }, []);
 
- // Usamos useEffect para obtener los datos de la API cuando el componente se monte
- useEffect(() => {
-   // Función para obtener los datos de la API
-   const fetchWorkouts = async () => {
-     try {
-       const response = await fetch("https://workouts-fit-api.vercel.app/api/workouts"); // Cambia esta URL a la de tu API
-       if (!response.ok) {
-         throw new Error("Error al obtener los workouts.");
-       }
-       const data = await response.json(); // Convertimos la respuesta a JSON
-       setWorkouts(data); // Guardamos los datos en el state
-       setLoading(false); // Dejamos de mostrar el mensaje de carga
-     } catch (error) {
-       setError(error.message); // Guardamos el mensaje de error si ocurre alguno
-       setLoading(false); // Dejamos de mostrar el mensaje de carga
-     }
-   };
+  if (loading) {
+    return <div className="text-3xl flex items-center justify-center h-screen">Cargando workouts...</div>;
+  }
 
-   fetchWorkouts(); // Llamamos a la función para obtener los datos
- }, []); // El array vacío asegura que solo se ejecute una vez al montar el componente
+  if (error) {
+    return <div className="text-3xl flex items-center justify-center h-screen">Error: {error}</div>;
+  }
 
- // Si estamos cargando, mostramos un mensaje de carga
- if (loading) {
-   return <div className="text-3xl flex items-center justify-center h-screen">Cargando<br /> workouts...</div>;
- }
+  // Calcular el índice de los workouts a mostrar en la página actual
+  const indexOfLastWorkout = currentPage * workoutsPerPage;
+  const indexOfFirstWorkout = indexOfLastWorkout - workoutsPerPage;
+  const currentWorkouts = workouts.slice(indexOfFirstWorkout, indexOfLastWorkout);
 
- // Si ocurre un error, lo mostramos
- if (error) {
-   return <div className="text-3xl flex items-center justify-center h-screen">Error: {error}</div>;
- }
+  // Función para cambiar de página
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
- 
- 
-
-
-
-
-
-
-
-    return (
-      <div>
-        <NavBar/>
-        <div className="relative isolate px-6 pt-14 lg:px-8">
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-        >
-          <div
-            style={{
-              clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-            }}
-            className="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-linear-to-tr from-[#f75555] to-[#fc8989] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-          />
-          {/* Poligono background parte inferior */}
-       <div
-            style={{
-              clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-            }}
-            className="relative left-[calc(50%+3rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 bg-linear-to-tr from-[#fa3131] to-[#fc8989] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-          />
-        </div>
-        
-      </div>
+  return (
+    <div className="mt-10">
       
- 
-   <div className="flex flex-col items-center mx-auto max-w-7xl px-6 lg:px-8">
-      <div className="flex flex-col items-center max-w-2xl lg:mx-0 gap-1.5">
-          <h2 className="text-4xl ">Explore Workouts</h2>
+      <div className="flex flex-col items-center mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="flex flex-col items-center max-w-2xl lg:mx-0 gap-1.5">
+          <h2 className="text-4xl">Explore Workouts</h2>
           <p className="text-xl">¡Inicia Ahora! Echa un Vistazo a Nuestros Entrenamientos</p>
-      </div>
-   
-     <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
-       {workouts.map((workout) => (
-         <li className="card bg-gray-500/30 w-full max-w-lg mx-auto rounded-3xl drop-shadow-lg card-content p-5  text-center hover:bg-[#e13b3b] hover: transition duration-500 hover:scale-105 " key={workout.id}>
-           <h2 className="font-semibold">{workout.name}</h2>
-           <br />
-           <p><b>Descipción: </b>  {workout.description}</p>
-           <br />
-           <p><b>Dificultad: </b>  {workout.difficulty}</p>
-           <p><b>Duración:  </b>  {workout.duration}</p>
-           <br />
-         </li>
-       ))}
-     </ul>
-   </div>
+        </div>
 
+        {/* Workouts Cards */}
+        <ul className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4 mt-4">
+          {currentWorkouts.map((workout) => (
+            <li
+              className="card bg-gray-500/30 w-full max-w-[150px] sm:max-w-md mx-auto rounded-xl sm:rounded-3xl drop-shadow-lg p-3 sm:p-5 text-center hover:bg-[#e13b3b] hover:transition duration-500 hover:scale-105"
+              key={workout.id}
+            >
+              <h2 className="text-sm sm:text-lg font-semibold">{workout.type}</h2>
+              <h3 className="text-xs sm:text-lg font-semibold">{workout.name}</h3>
+              <br />
+              <p className="text-xs sm:text-base">
+                <b>Descripción: </b> {workout.description}
+              </p>
+              <br />
+              <p className="text-xs sm:text-base">
+                <b>Dificultad: </b> {workout.difficulty}
+              </p>
+              <p className="text-xs sm:text-base">
+                <b>Duración: </b> {workout.duration}
+              </p>
+              <br />
+            </li>
+          ))}
+        </ul>
 
+        {/* Paginación */}
+<div className="mt-6 flex space-x-2">
+  {/* Botón Anterior */}
+  <button
+    onClick={() => paginate(currentPage - 1)}
+    disabled={currentPage === 1}
+    className={`px-4 py-2 rounded-lg bg-gray-400 hover:bg-gray-600 transition ${
+      currentPage === 1 ? "opacity-50 cursor-not-allowed" : ""
+    }`}
+  >
+    Anterior
+  </button>
 
+  {/* Numeración de páginas (visible solo en pantallas medianas en adelante) */}
+  <div className="hidden sm:flex space-x-2">
+    {[...Array(Math.ceil(workouts.length / workoutsPerPage)).keys()].map((number) => (
+      <button
+        key={number + 1}
+        onClick={() => paginate(number + 1)}
+        className={`px-4 py-2 rounded-lg ${
+          currentPage === number + 1 ? "bg-red-500 text-white" : "bg-gray-400 hover:bg-gray-600"
+        } transition`}
+      >
+        {number + 1}
+      </button>
+    ))}
+  </div>
 
+  {/* Botón Siguiente */}
+  <button
+    onClick={() => {
+    paginate(currentPage + 1);
+    window.scrollTo({ top: 0 }); // Desplazar hacia arriba
+  }}
+    disabled={currentPage === Math.ceil(workouts.length / workoutsPerPage)}
+    className={`px-4 py-2 rounded-lg bg-gray-400 hover:bg-gray-600 transition ${
+      currentPage === Math.ceil(workouts.length / workoutsPerPage) ? "opacity-50 cursor-not-allowed" : ""
+    }`}
+  >
+    Siguiente
+  </button>
 </div>
-        
-      
-);};
-        
- 
+<br />
+      </div>
+    </div>
+  );
+};
 
 export default WorkoutsPage;
