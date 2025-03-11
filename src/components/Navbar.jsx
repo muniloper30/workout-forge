@@ -1,5 +1,6 @@
 import logoNavBar from '../assets/logoNavBar.png';
 import { Menu, X } from 'lucide-react'
+
 import { useState } from 'react';
 
 const NavBar = () => {
@@ -28,7 +29,7 @@ const NavBar = () => {
                        <a href="/Workouts" className="block px-3 py-2 text-neutral-100 hover:bg-[#E13B3B] transition duration-500 hover:scale-125">Workouts</a>
                    </li>
                    <li>
-                       <a href="/Csg" className="block px-3 py-2 text-neutral-100 hover:bg-[#E13B3B] transition duration-500 hover:scale-125">Csg</a>
+                       <a href="/CsgStudio" className="block px-3 py-2 text-neutral-100 hover:bg-[#E13B3B] transition duration-500 hover:scale-125">Csg</a>
                    </li>
                 </ul>
                 <div className="hidden lg:flex justify-center space-x-12 items-center">
@@ -53,21 +54,22 @@ const NavBar = () => {
   }`}>
                 <ul className="flex flex-col items-center gap-5"> {/* Contenedor de los links de navegación */}
                    <li>
-                       <a href="/" className="block px-3 py-2 text-neutral-100 text-3xl hover:bg-[#E13B3B] transition duration-500 hover:scale-125">Home</a>
+                       <a href="/" className="block px-3 py-2 text-neutral-100 text-2xl hover:bg-[#E13B3B] transition duration-500 hover:scale-125">Home</a>
                    </li>
                    <li>
-                       <a href="/Workouts" className="block px-3 py-2 text-neutral-100 text-3xl hover:bg-[#E13B3B] transition duration-500 hover:scale-125">Create Workout</a>
+                       <a href="/Workouts" className="block px-3 py-2 text-neutral-100 text-2xl hover:bg-[#E13B3B] transition duration-500 hover:scale-125">Workouts</a>
                    </li>
                    <li>
-                       <a href="/createWorkout" className="block px-3 py-2 text-neutral-100 text-3xl hover:bg-[#E13B3B] transition duration-500 hover:scale-125">Csg</a>
+                       <a href="/CsgStudio" className="block px-3 py-2 text-neutral-100 text-2xl hover:bg-[#E13B3B] transition duration-500 hover:scale-125">Csg Studio</a>
                    </li>
                 </ul>
                 <br />
+                <br />
                 <div className="flex flex-col items-center gap-5">
-                    <a href="#" className="py-2 px-3 border rounded-md transition duration-500 hover:scale-125 text-3xl">
+                    <a href="#" className="py-2 px-3 border rounded-md transition duration-500 hover:scale-125 text-2xl">
                         Login
                     </a>
-                    <a href="#" className="bg-gradient-to-r from-[#E13B3B] to-[#ca0303] py-2 px-3 text-neutral-100 rounded-md transition duration-500 hover:scale-125 text-3xl">
+                    <a href="#" className="bg-gradient-to-r from-[#E13B3B] to-[#ca0303] py-2 px-3 text-neutral-100 rounded-md transition duration-500 hover:scale-125 text-2xl">
                     Create an account
                     </a>          
                 </div>
