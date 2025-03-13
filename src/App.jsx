@@ -7,7 +7,9 @@ import ProgressPage from './pages/ProgressPage';
 import PolygonTop from './components/PolygonTop';
 import PolygonBottom from './components/PolygonBottom';
 import NavBar from './components/Navbar';
-import FooterSection from './components/footerSection';
+import FooterSection from './components/FooterSection';
+import LoginPage from './pages/LoginPage';
+import CreateAccountPage from './pages/CreateAccountPage';
 
 
 function App() {
@@ -16,13 +18,16 @@ function App() {
       <PolygonTop />
       <NavBar />
       <Routes> /* En v6 usamos Routes en lugar de Route solo */
-        <Route path="/" element={<HomePage />} />
+      <Route index element={<HomePage />} />
+        <Route path="/HomePage" element={<HomePage />} />
         <Route path="/Workouts" element={<WorkoutsPage />} />
         <Route path="/progress" element={<ProgressPage />} />
-        <Route path="/CsgStudio"element={<CsgPage />} />
+        <Route path="/CsgStudio" element={<CsgPage />} />
+        <Route path="/Login" element={<LoginPage />} />
+        <Route path="/CreateAccount" element={<CreateAccountPage />} />
       </Routes>
-      <FooterSection />
       <PolygonBottom />
+      <FooterSection />
 
 
     </div>
