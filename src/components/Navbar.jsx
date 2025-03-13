@@ -19,11 +19,11 @@ const NavBar = () => {
            <div className="flex justify-between items-center">
                 <div className="flex items-center flex-shrink-0"> {/* Contenedor img logo y nombre app */}
                     <img src= {logoNavBar} alt="Workout Forge Logo" className="h-15 w-15 mr-2" /> {/* Logo de la web */}
-                    <a href='/' className="text-3xl cursor-pointer px-2 py-2 tracking-tight font-[Saira] hover:bg-[#E13B3B] transition duration-500">Workout Forge</a>
+                    <a href='/HomePage' className="text-3xl cursor-pointer px-2 py-2 tracking-tight font-[Saira] hover:bg-[#E13B3B] transition duration-500">Workout Forge</a>
                 </div>
                 <ul className='hidden lg:flex ml-14 space-x-12'> {/* Contenedor de los links de navegación */}
                    <li>
-                       <a href="/" className="block px-3 py-2 text-neutral-100 hover:bg-[#E13B3B] transition duration-500 hover:scale-125">Home</a>
+                       <a href="/HomePage" className="block px-3 py-2 text-neutral-100 hover:bg-[#E13B3B] transition duration-500 hover:scale-125">Home</a>
                    </li>
                    <li>
                        <a href="/Workouts" className="block px-3 py-2 text-neutral-100 hover:bg-[#E13B3B] transition duration-500 hover:scale-125">Workouts</a>
@@ -33,10 +33,10 @@ const NavBar = () => {
                    </li>
                 </ul>
                 <div className="hidden lg:flex justify-center space-x-12 items-center">
-                    <a href="#" className="py-2 px-3 border rounded-md transition duration-500 hover:scale-125">
+                    <a href="/Login" className="py-2 px-3 border rounded-md transition duration-500 hover:scale-125">
                         Login
                     </a>
-                    <a href="#" className="bg-gradient-to-r from-[#E13B3B] to-[#ca0303] py-2 px-3 text-neutral-100 rounded-md transition duration-500 hover:scale-125">
+                    <a href="/CreateAccount" className="bg-gradient-to-r from-[#E13B3B] to-[#ca0303] py-2 px-3 text-neutral-100 rounded-md transition duration-500 hover:scale-125">
                     Create an account
                     </a>          
                 </div>
@@ -54,7 +54,7 @@ const NavBar = () => {
   }`}>
                 <ul className="flex flex-col items-center gap-5"> {/* Contenedor de los links de navegación */}
                    <li>
-                       <a href="/" className="block px-3 py-2 text-neutral-100 text-2xl hover:bg-[#E13B3B] transition duration-500 hover:scale-125">Home</a>
+                       <a href="/HomePage" className="block px-3 py-2 text-neutral-100 text-2xl hover:bg-[#E13B3B] transition duration-500 hover:scale-125">Home</a>
                    </li>
                    <li>
                        <a href="/Workouts" className="block px-3 py-2 text-neutral-100 text-2xl hover:bg-[#E13B3B] transition duration-500 hover:scale-125">Workouts</a>
@@ -66,10 +66,10 @@ const NavBar = () => {
                 <br />
                 <br />
                 <div className="flex flex-col items-center gap-5">
-                    <a href="#" className="py-2 px-3 border rounded-md transition duration-500 hover:scale-125 text-2xl">
+                    <a href="/Login" className="py-2 px-3 border rounded-md transition duration-500 hover:scale-125 text-2xl">
                         Login
                     </a>
-                    <a href="#" className="bg-gradient-to-r from-[#E13B3B] to-[#ca0303] py-2 px-3 text-neutral-100 rounded-md transition duration-500 hover:scale-125 text-2xl">
+                    <a href="/CreateAccount" className="bg-gradient-to-r from-[#E13B3B] to-[#ca0303] py-2 px-3 text-neutral-100 rounded-md transition duration-500 hover:scale-125 text-2xl">
                     Create an account
                     </a>          
                 </div>

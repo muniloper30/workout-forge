@@ -3,11 +3,11 @@ import logoCsgWeb from '../assets/logoCsgWeb.png';
 
 const FooterSection = () => {
   return (
-    <footer className="py-3 backdrop-blur-lg border-b border-neutral-700/80">
+    <footer className="py-3 backdrop-blur-lg  border-neutral-700/80 position-fixed bottom-0 w-full">
     <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
             <a href="/" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-                <img src= {logoNavBar} className="h-8" alt="Workout Forge Logo" />
+                <img src= {logoNavBar}  className="h-15 w-15" alt="Workout Forge Logo" />
                 <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white font-[Saira]">Workout Forge</span>
             </a>
             <a href="/" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">

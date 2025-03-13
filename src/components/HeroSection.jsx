@@ -1,5 +1,3 @@
-import PolygonTop from './PolygonTop';
-import PolygonBottom from './PolygonBottom';
 
 const HeroSection = () => {
     return (
