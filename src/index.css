@@ -11,4 +11,6 @@
     scroll-behavior: smooth;
     font-family: "Poppins", sans-serif;
     color-scheme: dark;
+    overflow-x: hidden;
 }
+

@@ -4,7 +4,7 @@ import { Dumbbell, MoveRight, Instagram  } from 'lucide-react';
 
 const CsgPage = () => {
     return (
-    <div id="featuresSection"  className="overflow-hidden  py-24 sm:py-32 mt-9">
+    <div id="featuresSection"  className="overflow-hidden  py-10 ">
       <div  className="mx-auto max-w-7xl px-6 lg:px-8">
         <div  className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pt-4 lg:pr-8">
@@ -50,7 +50,7 @@ const CsgPage = () => {
           <img
             alt="Instagram Csg"
             src="/src/assets/csgInstragram.png"
-            className="w-full max-w-2xl rounded-xl ring-1 shadow-xl ring-gray-400/10 sm:w-[48rem] md:w-[57rem] lg:w-[30rem] xl:w-[20rem] lg:mt-10 hover:transition duration-500 hover:scale-105"
+            className="w-full max-w-2xl rounded-xl ring-1 shadow-xl ring-gray-400/10 sm:w-[5rem] md:w-[20rem] lg:w-[20rem] xl:w-[20rem] lg:mt-10 hover:transition duration-500 hover:scale-105"
           />
           </a>
         </div>

@@ -121,6 +121,8 @@ const WorkoutsPage = () => {
   </button>
 </div>
 <br />
+<br />
+<br />
       </div>
     </div>
   );
