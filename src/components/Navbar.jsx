@@ -1,7 +1,10 @@
+import { supabase } from '/supabaseClient';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import logoNavBar from '../assets/logoNavBar.png';
 import { Menu, X } from 'lucide-react'
 
-import { useState } from 'react';
+
 
 const NavBar = () => {
     const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false); //Estado para el menú hamburguesa
@@ -12,6 +15,55 @@ const NavBar = () => {
         setMobileDrawerOpen(!mobileDrawerOpen);
         setIsOpen(!isOpen);
     }
+
+    const [user, setUser] = useState(null);
+    const navigate = useNavigate();
+
+// Verificar si el usuario está autenticado
+useEffect(() => {
+    const fetchUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      setUser(user);
+    };
+
+    fetchUser();
+  }, []);
+
+  const handleProfileClick = () => {
+    if (!user) {
+      alert("Debes registrarte para acceder al perfil.");
+    } else {
+      navigate("/Perfil");
+    }
+  };
+
+
+
+
+
+
+    // const [isAuthenticated, setIsAuthenticated] = useState(false);
+    // useEffect(() => {
+    //     const session = supabase.auth.session();
+    //     setIsAuthenticated(session !== null);
+    //     const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
+    //         setIsAuthenticated(session !== null);
+    //     });
+    //     return () => {
+    //         authListener?.unsubscribe();
+    //     };
+    // }, []);
+
+    // const handleProfileClick = () => {
+    //     if (isAuthenticated) {
+    //         window.location.href = '/Perfil';
+    //     } else {
+    //         alert('Debes iniciar sesión para acceder a tu perfil');
+    //         window.location.href = '/Login';
+    //     }
+    // }
+
+
 
   return (
     <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-700/80"> {/*Componente Navbar  */}
@@ -31,9 +83,12 @@ const NavBar = () => {
                    <li>
                        <a href="/CsgStudio" className="block px-3 py-2 text-neutral-100 hover:bg-[#E13B3B] transition duration-500 hover:scale-125">Csg</a>
                    </li>
+                   <li>
+                       <button onClick={handleProfileClick} className="block px-3 py-2 text-neutral-100 hover:bg-[#E13B3B] transition duration-500 hover:scale-125">Perfil</button>
+                   </li>
                 </ul>
                 <div className="hidden lg:flex justify-center space-x-12 items-center">
-                    <a href="/Login" className="py-2 px-3 border rounded-md transition duration-500 hover:scale-125">
+                    <a href='/Login' className="py-2 px-3 border rounded-md transition duration-500 hover:scale-125">
                         Login
                     </a>
                     <a href="/CreateAccount" className="bg-gradient-to-r from-[#E13B3B] to-[#ca0303] py-2 px-3 text-neutral-100 rounded-md transition duration-500 hover:scale-125">
@@ -61,6 +116,9 @@ const NavBar = () => {
                    </li>
                    <li>
                        <a href="/CsgStudio" className="block px-3 py-2 text-neutral-100 text-2xl hover:bg-[#E13B3B] transition duration-500 hover:scale-125">Csg Studio</a>
+                   </li>
+                   <li>
+                   <button onClick={handleProfileClick} className="block px-3 py-2 text-2xl text-neutral-100 hover:bg-[#E13B3B] transition duration-500 hover:scale-125">Perfil</button>
                    </li>
                 </ul>
                 <br />

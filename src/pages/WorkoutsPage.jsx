@@ -45,7 +45,7 @@ const WorkoutsPage = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="mt-10">
+    <div className="flex flex-col justify-center min-h-screen">
       
       <div className="flex flex-col items-center mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-col items-center max-w-2xl lg:mx-0 gap-1.5">
