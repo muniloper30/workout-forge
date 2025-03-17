@@ -84,7 +84,7 @@ useEffect(() => {
                        <a href="/CsgStudio" className="block px-3 py-2 text-neutral-100 hover:bg-[#E13B3B] transition duration-500 hover:scale-125">Csg</a>
                    </li>
                    <li>
-                       <button onClick={handleProfileClick} className="block px-3 py-2 text-neutral-100 hover:bg-[#E13B3B] transition duration-500 hover:scale-125">Perfil</button>
+                       <button onClick={handleProfileClick} className="block px-3 py-2 text-neutral-100 hover:bg-[#E13B3B] transition duration-500 hover:scale-125 cursor-pointer">Perfil</button>
                    </li>
                 </ul>
                 <div className="hidden lg:flex justify-center space-x-12 items-center">

@@ -8,7 +8,7 @@ const FeaturesSection = () => {
           <div className="lg:pt-4 lg:pr-8">
             <div className="lg:max-w-lg">
             <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl transition duration-500 hover:scale-110">
-                <a className="font-[Saira] border rounded-md px-2" href="/Workouts">Explore Workouts</a>
+                <a className="font-[Saira] border rounded-md px-2" href="/Workouts">Explore <span className="text-red-500">Workouts</span> </a>
             </p>
             <br />
               <h2 className="text-base/7 font-semibold text-white ml-0.5"> Entrenamientos Predefinidos a tu Alcance</h2>

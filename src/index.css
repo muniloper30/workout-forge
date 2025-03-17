@@ -12,5 +12,7 @@
     font-family: "Poppins", sans-serif;
     color-scheme: dark;
     overflow-x: hidden;
+    background: url("/src/assets/img_bg2.jpg") no-repeat center center fixed;
+    background-size: cover;
 }
 

@@ -33,7 +33,7 @@ const LoginPage = () => {
   };
 
   return (
-    <section className="flex flex-col justify-center min-h-screen">
+    <section className="overflow-hidden  py-24 sm:py-32 mt-9">
       <div className="flex flex-col items-center justify-center py-6 sm:py-12 md:flex-row md:justify-center md:space-x-6 lg:space-x-12 p-4 sm:px-6 gap-16">
         <a
           href="#"

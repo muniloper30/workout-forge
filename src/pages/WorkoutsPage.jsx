@@ -49,15 +49,16 @@ const WorkoutsPage = () => {
       
       <div className="flex flex-col items-center mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-col items-center max-w-2xl lg:mx-0 gap-1.5">
-          <h2 className="text-4xl">Explore Workouts</h2>
-          <p className="text-xl">¡Inicia Ahora! Echa un Vistazo a Nuestros Entrenamientos</p>
+          <h2 className="text-4xl">Explore <span className="text-red-500">Workouts</span> </h2>
+          <p className="text-center xl:text-xl">¡Inicia Ahora! Echa un Vistazo a Nuestros Entrenamientos</p>
+          <p className="text-center text-xs xl:text-lg font-bold">¿ Quieres crear tu workout personalizado ? <span><a className="hover:underline text-red-500" href="/CreateWorkout">Pincha Aquí!</a></span></p>
         </div>
 
         {/* Workouts Cards */}
         <ul className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4 mt-4">
           {currentWorkouts.map((workout) => (
             <li
-              className="card bg-gray-500/30 w-full max-w-[150px] sm:max-w-md mx-auto rounded-xl sm:rounded-3xl drop-shadow-lg p-3 sm:p-5 text-center hover:bg-[#e13b3b] hover:transition duration-500 hover:scale-105"
+              className="card bg-gray-500/50 w-full max-w-[150px] sm:max-w-md mx-auto rounded-xl sm:rounded-3xl drop-shadow-lg p-3 sm:p-5 text-center hover:bg-[#e13b3b] hover:transition duration-500 hover:scale-105"
               key={workout.id}
             >
               <h2 className="text-sm sm:text-lg font-semibold">{workout.type}</h2>
@@ -84,7 +85,7 @@ const WorkoutsPage = () => {
   <button
     onClick={() => paginate(currentPage - 1)}
     disabled={currentPage === 1}
-    className={`px-4 py-2 rounded-lg bg-gray-400 hover:bg-gray-600 transition ${
+    className={`px-4 py-2 rounded-lg bg-red-500 hover:bg-gray-600 transition cursor-pointer ${
       currentPage === 1 ? "opacity-50 cursor-not-allowed" : ""
     }`}
   >
@@ -98,7 +99,7 @@ const WorkoutsPage = () => {
         key={number + 1}
         onClick={() => paginate(number + 1)}
         className={`px-4 py-2 rounded-lg ${
-          currentPage === number + 1 ? "bg-red-500 text-white" : "bg-gray-400 hover:bg-gray-600"
+          currentPage === number + 1 ? "bg-red-500 text-white" : "bg-gray-400 hover:bg-gray-600 cursor-pointer"
         } transition`}
       >
         {number + 1}
@@ -113,7 +114,7 @@ const WorkoutsPage = () => {
     window.scrollTo({ top: 0 }); // Desplazar hacia arriba
   }}
     disabled={currentPage === Math.ceil(workouts.length / workoutsPerPage)}
-    className={`px-4 py-2 rounded-lg bg-gray-400 hover:bg-gray-600 transition ${
+    className={`px-4 py-2 rounded-lg bg-red-500 hover:bg-gray-600 transition cursor-pointer ${
       currentPage === Math.ceil(workouts.length / workoutsPerPage) ? "opacity-50 cursor-not-allowed" : ""
     }`}
   >

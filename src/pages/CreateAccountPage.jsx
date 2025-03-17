@@ -64,7 +64,7 @@ const CreateAccountPage = () => {
 
   return (
     <div className="flex flex-col justify-center min-h-screen">
-      <h1 className="font-[Saira] text-5xl font-semibold text-white sm:text-7xl  text-center">
+      <h1 className="font-[Saira] text-5xl font-semibold text-white sm:text-7xl text-center">
         Workout <span className="text-[#E13B3B]">Forge</span>
       </h1>
 
