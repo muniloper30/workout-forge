@@ -63,8 +63,8 @@ const CreateAccountPage = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center min-h-screen">
-      <h1 className="font-[Saira] text-5xl font-semibold text-white sm:text-7xl text-center">
+    <div className="overflow-hidden  py-24 sm:py-32 mb-9">
+      <h1 className="font-[Saira] text-5xl font-semibold text-white sm:text-7xl text-center flex flex-col relative -top-8">
         Workout <span className="text-[#E13B3B]">Forge</span>
       </h1>
 

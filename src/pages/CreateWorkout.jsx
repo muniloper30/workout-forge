@@ -56,8 +56,8 @@ const CreateWorkout = () => {
     <div className="flex items-center justify-center p-3 md:p-22 overflow-hidden  py-24 sm:py-32 mt-9">
       <div className="w-full sm:max-w-md bg-gradient-to-r from-[#E13B3B] to-[#ca0303] p-6 rounded-lg shadow-lg">
         <div className="flex flex-col items-center max-w-2xl lg:mx-0 gap-1.5">
-          <h2 className="text-4xl">Crear Nuevo Workout</h2>
-          <p className="text-xl">Crea un entrenamiento personalizado para ti.</p>
+          <h2 className="text-4xl text-center">Nuevo Workout</h2>
+          <p className="text-base text-center">Crea un entrenamiento personalizado para ti.</p>
         </div>
 
         {/* Formulario de creación */}
