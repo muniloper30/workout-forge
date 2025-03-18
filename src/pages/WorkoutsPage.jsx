@@ -63,7 +63,7 @@ const WorkoutsPage = () => {
   return (
     <div className="flex flex-col justify-center min-h-screen">
       <div className="flex flex-col items-center mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex flex-col items-center max-w-2xl lg:mx-0 gap-1.5">
+        <div className="flex flex-col items-center max-w-2xl lg:mx-0 gap-1.5 mt-10">
           <h2 className="text-4xl">Explore <span className="text-red-500">Workouts</span> </h2>
           <p className="text-center xl:text-xl">¡Inicia Ahora! Echa un Vistazo a Nuestros Entrenamientos</p>
           <p className="text-center text-xs xl:text-lg font-bold">

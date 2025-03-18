@@ -1,4 +1,5 @@
 import { Dumbbell, MoveRight, Instagram } from "lucide-react";
+import { Map, Marker } from "pigeon-maps";
 
 const CsgPage = () => {
   return (
@@ -53,7 +54,6 @@ const CsgPage = () => {
           </a>
         </div>
       </section>
-      {/* Separador entre secciones */}
       <hr className=" py-4 bg-red-500"></hr>
       {/* Sección de Features de page Csg */}
       <section className="flex flex-row flex-wrap gap-x-4 gap-y-4 items-start min-h-screen px-6 pb-6 lg:flex-col lg:items-center lg:justify-center lg:px-16 ">
@@ -114,7 +114,7 @@ const CsgPage = () => {
             </div>
           </div>
           <div className="hidden lg:block ml-10">
-          <a href="https://www.instagram.com/cesarserranocoach/?hl=es"> </a>
+            <a href="https://www.instagram.com/cesarserranocoach/?hl=es"> </a>
             <img
               src="/src/assets/cesarSerrano.png"
               alt="imagen-box"
@@ -125,19 +125,52 @@ const CsgPage = () => {
       </section>
 
       <hr className=" py-4 bg-red-500"></hr>
+
+      <section id="contacto" className="flex flex-col items-center justify-center py-12 text-white">
+        <h2 className="text-5xl font-bold hidden lg:block mb-6">CONTACTO</h2>
+        <div className="flex space-x-6 text-5xl">
+          <a
+            href="https://wa.me/610602583"
+            target="blank"
+            title="Contáctame, estoy poniendo fuerte a la gente -> 610 602 583"
+            className="hover:text-green-500 transition"
+          >
+            <i className="fa-brands fa-whatsapp"></i>
+          </a>
+          <span className="hover:text-pink-500 transition">
+            <a
+              href="https://www.instagram.com/csg.studio/"
+              className="cursor-pointer"
+              title="Síguenos en Instagram @csg.studio"
+            >
+              <i className="fa-brands fa-instagram"></i>
+            </a>
+          </span>
+          <span className="hover:text-red-500 transition">
+            <a
+              href="mailto:cesarserranocoach@gmail.com"
+              alt="Enviar correo electrónico"
+              title="Envíame un correo"
+              className="cursor-pointer"
+            >
+              <i className="fa-brands fa-google"></i>
+            </a>
+          </span>
+        </div>
+      </section>
+
+      {/* Mapa con dimensiones limitadas */}
+      <div className="w-full lg:w-96 mx-auto">
+        <Map
+          height={300}
+          defaultCenter={[36.746891021728516, -4.419100761413574]}
+          defaultZoom={15} // Ajusta el zoom para un enfoque más cercano
+        >
+          <Marker width={50} anchor={[36.746891021728516, -4.419100761413574]} />
+        </Map>
+      </div>
     </div>
   );
 };
 
 export default CsgPage;
-
-{
-  /* <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl transition duration-500 hover:scale-110">
-<a
-  className="font-[Saira] border rounded-md px-2"
-  href="/CsgStudio"
->
-  <span className="text-[#E13B3B]">Csg</span> Studio
-</a>
-</p> */
-}
