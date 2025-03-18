@@ -127,7 +127,7 @@ const CsgPage = () => {
       <hr className=" py-4 bg-red-500"></hr>
 
       <section id="contacto" className="flex flex-col items-center justify-center py-12 text-white">
-        <h2 className="text-5xl font-bold hidden lg:block mb-6">CONTACTO</h2>
+        <h2 className="text-5xl font-[saira] text-white  lg:block mb-6 bg-gradient-to-r from-[#E13B3B] to-[#ca0303] py-2 px-3 rounded-md transition duration-500 hover:scale-125">CONTACTO</h2>
         <div className="flex space-x-6 text-5xl">
           <a
             href="https://wa.me/610602583"
@@ -160,15 +160,29 @@ const CsgPage = () => {
       </section>
 
       {/* Mapa con dimensiones limitadas */}
-      <div className="w-full lg:w-96 mx-auto">
-        <Map
-          height={300}
-          defaultCenter={[36.746891021728516, -4.419100761413574]}
-          defaultZoom={15} // Ajusta el zoom para un enfoque más cercano
-        >
-          <Marker width={50} anchor={[36.746891021728516, -4.419100761413574]} />
-        </Map>
-      </div>
+      <div className="relative w-full max-w-md mx-auto">
+  <Map
+    height={200}
+    defaultCenter={[36.746891021728516, -4.419100761413574]}
+    defaultZoom={15}
+  >
+    <Marker width={50} anchor={[36.746891021728516, -4.419100761413574]} />
+  </Map>
+
+  <button
+    onClick={() =>
+      window.open(
+        "https://www.google.com/maps?q=36.746891021728516,-4.419100761413574",
+        "_blank"
+      )
+    }
+    className="absolute bottom-3 right-2 bg-red-500 text-white text-sm px-2 py-2 rounded-lg shadow-md hover:transition duration-500 hover:scale-105 transition cursor-pointer"
+  >
+    Ver en Google Maps
+  </button>
+</div>
+
+       
     </div>
   );
 };
