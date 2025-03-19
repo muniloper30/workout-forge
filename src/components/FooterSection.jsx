@@ -7,10 +7,10 @@ const FooterSection = () => {
     <footer className='text-center '>
     <div className="max-w-screen-xl mx-auto p-4 md:py-8 ">
         <div className="md:flex md:flex-row md:items-center md:justify-between justify-center items-center flex flex-col pt-35">
-            <a href="/" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse ">
+            <Link to="/" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse ">
                 <img src= {logoNavBar}  className="pt h-15 w-15 md:h-15 md:w-15 hidden md:block" alt="Workout Forge Logo" />
                 <p className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white font-[Saira]">Workout <span className="text-red-500">Forge</span> </p>
-            </a>
+            </Link>
             <Link to="/CsgStudio" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
                 <img src= {logoCsgWeb} className="h-15" alt="Csg Logo" />
             </Link>

@@ -1,5 +1,8 @@
 import { Dumbbell, MoveRight, Instagram } from "lucide-react";
 import { Map, Marker } from "pigeon-maps";
+import csgInstagram from "../assets/csgInstragram.png";
+import cesarSerrano from "../assets/cesarSerrano.png";
+
 
 const CsgPage = () => {
   return (
@@ -44,7 +47,7 @@ const CsgPage = () => {
         <div className="hidden lg:block ml-10">
           <a href="https://www.instagram.com/csg.studio/">
             <img
-              src="/src/assets/csgInstragram.png"
+              src={csgInstagram}
               alt="ig-csg"
               className="w-96 h-auto rounded-lg shadow-lg hover:transition duration-500 hover:scale-105"
             />
@@ -113,8 +116,8 @@ const CsgPage = () => {
           <div className="hidden lg:block ml-10">
             <a href="https://www.instagram.com/cesarserranocoach/?hl=es"> </a>
             <img
-              src="/src/assets/cesarSerrano.png"
-              alt="imagen-box"
+              src={cesarSerrano}
+              alt="cesarSerrano"
               className="w-96 h-auto rounded-lg shadow-lg bg-gray-500/20 drop-shadow-lg p-3 sm:p-5 text-center hover:bg-[#e13b3b] hover:transition duration-500 hover:scale-105 cursor-pointer"
             />
           </div>
