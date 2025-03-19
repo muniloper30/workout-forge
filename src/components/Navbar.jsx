@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logoNavBar from "../assets/logoNavBar.png";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
@@ -68,37 +69,36 @@ const NavBar = () => {
                 alt="Workout Forge Logo"
                 className="h-15 w-15 mr-2"
               />
-              <a
-                href="/HomePage"
-                className="text-3xl cursor-pointer px-2 py-2 tracking-tight font-[Saira] hover:bg-[#E13B3B] transition duration-500"
-              >
-                Workout Forge
-              </a>
+              <Link to="/HomePage">
+                <span className="text-3xl cursor-pointer px-2 py-2 tracking-tight font-[Saira] hover:bg-[#E13B3B] transition duration-500">
+                  Workout Forge
+                </span>
+              </Link>
             </div>
             <ul className="hidden lg:flex ml-14 space-x-12">
               <li>
-                <a
-                  href="/HomePage"
+                <Link
+                  to="/HomePage"
                   className="block px-3 py-2 text-neutral-100 hover:bg-[#E13B3B] transition duration-500 hover:scale-125"
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/Workouts"
+                <Link
+                  to="/Workouts"
                   className="block px-3 py-2 text-neutral-100 hover:bg-[#E13B3B] transition duration-500 hover:scale-125"
                 >
                   Workouts
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/CsgStudio"
+                <Link
+                  to="/CsgStudio"
                   className="block px-3 py-2 text-neutral-100 hover:bg-[#E13B3B] transition duration-500 hover:scale-125"
                 >
                   Csg
-                </a>
+                </Link>
               </li>
               <li>
                 <button
@@ -110,18 +110,18 @@ const NavBar = () => {
               </li>
             </ul>
             <div className="hidden lg:flex justify-center space-x-12 items-center">
-              <a
-                href="/Login"
+              <Link
+                to="/Login"
                 className="py-2 px-3 border rounded-md transition duration-500 hover:scale-125"
               >
                 Login
-              </a>
-              <a
-                href="/CreateAccount"
+              </Link>
+              <Link
+                to="/CreateAccount"
                 className="bg-gradient-to-r from-[#E13B3B] to-[#ca0303] py-2 px-3 text-neutral-100 rounded-md transition duration-500 hover:scale-125"
               >
                 Create an account
-              </a>
+              </Link>
             </div>
             <div
               className={`lg:hidden cursor-pointer transition-all duration-300 ${
