@@ -1,4 +1,5 @@
 import { Dumbbell } from 'lucide-react';
+import CsgFeature from './CsgFeature';
 
 const FeaturesSection = () => {
     return (
@@ -32,7 +33,7 @@ const FeaturesSection = () => {
                 <li>
                     <div className="flex items-center mt-4">
                         <Dumbbell size={61} className="text-[#E13B3B]" />
-                        <span className="ml-3 text-base/7 text-white">Para una experiencia más personalizada, te invitamos a visitar Csg Studio, el centro de entrenamiento con el que colaboramos. Allí podrás llevar tus entrenamientos al siguiente nivel. </span>
+                        <span className="ml-3 text-base/7 text-white">Para una experiencia más personalizada, te invitamos a visitar <a href="/CsgStudio" className="hover:underline"><strong>Csg Studio</strong></a>, el centro de entrenamiento con el que colaboramos. Allí podrás llevar tus entrenamientos al siguiente nivel. </span>
                     </div>
                 </li>
               </ul>
