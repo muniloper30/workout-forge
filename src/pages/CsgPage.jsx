@@ -11,6 +11,7 @@ const CsgPage = () => {
       >
         <div className="text-center lg:text-left max-w-2xl">
           <div className="flex items-center space-x-2 text-lg text-gray-700">
+            
             <span className="text-red-500">
               Revisa nuestro perfil de Instagram
             </span>{" "}
@@ -20,7 +21,7 @@ const CsgPage = () => {
                 size={24}
               />
             </a>
-            <i className="bi bi-arrow-right"></i>
+            <i className="bi bi-arrow-right text-white"></i>
           </div>
           <h2 className="text-4xl lg:text-6xl font-bold text-white mt-4">
             Somos <span className="text-red-500">Csg</span> Studio
@@ -34,14 +35,10 @@ const CsgPage = () => {
             evolución).
           </p>
           <div className="mt-6 flex flex-col sm:flex-row items-center gap-4">
-            <input
-              type="text"
-              placeholder="Email address"
-              className="w-full sm:w-auto px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <button className="bg-gradient-to-r from-[#E13B3B] to-[#ca0303] py-2 px-3 text-neutral-100 rounded-md transition duration-500 hover:scale-110 cursor-pointer">
+           
+            <a href="#features" className="bg-gradient-to-r from-[#E13B3B] to-[#ca0303] py-2 px-3 text-neutral-100 rounded-md transition duration-500 hover:scale-110 cursor-pointer">
               Get Started
-            </button>
+            </a>
           </div>
         </div>
         <div className="hidden lg:block ml-10">
@@ -56,7 +53,7 @@ const CsgPage = () => {
       </section>
       <hr className=" py-4 bg-red-500"></hr>
       {/* Sección de Features de page Csg */}
-      <section className="flex flex-row flex-wrap gap-x-4 gap-y-4 items-start min-h-screen px-6 pb-6 lg:flex-col lg:items-center lg:justify-center lg:px-16 ">
+      <section id="features" className="flex flex-row flex-wrap gap-x-4 gap-y-4 items-start min-h-screen px-6 pb-6 lg:flex-col lg:items-center lg:justify-center lg:px-16 ">
         <div className="text-center max-w-2xl">
           <h3 className="md:text-5xl text-3xl font-bold text-white mt-15 md:mb-0">
             Personal Training with{" "}
