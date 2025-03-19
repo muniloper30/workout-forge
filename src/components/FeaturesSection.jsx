@@ -1,5 +1,6 @@
 import { Dumbbell } from 'lucide-react';
-import CsgFeature from './CsgFeature';
+import workoutScreenshot from "../assets/workoutScreenshot.png";
+import { Link } from 'react-router-dom';
 
 const FeaturesSection = () => {
     return (
@@ -9,7 +10,7 @@ const FeaturesSection = () => {
           <div className="lg:pt-4 lg:pr-8">
             <div className="lg:max-w-lg">
             <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl transition duration-500 hover:scale-110">
-                <a className="font-[Saira] border rounded-md px-2" href="/Workouts">Explore <span className="text-red-500">Workouts</span> </a>
+                <Link className="font-[Saira] border rounded-md px-2" to="/Workouts">Explore <span className="text-red-500">Workouts</span> </Link>
             </p>
             <br />
               <h2 className="text-base/7 font-semibold text-white ml-0.5"> Entrenamientos Predefinidos a tu Alcance</h2>
@@ -33,7 +34,7 @@ const FeaturesSection = () => {
                 <li>
                     <div className="flex items-center mt-4">
                         <Dumbbell size={61} className="text-[#E13B3B]" />
-                        <span className="ml-3 text-base/7 text-white">Para una experiencia más personalizada, te invitamos a visitar <a href="/CsgStudio" className="hover:underline"><strong>Csg Studio</strong></a>, el centro de entrenamiento con el que colaboramos. Allí podrás llevar tus entrenamientos al siguiente nivel. </span>
+                        <span className="ml-3 text-base/7 text-white">Para una experiencia más personalizada, te invitamos a visitar <Link to="/CsgStudio" className="hover:underline"><strong>Csg Studio</strong></Link>, el centro de entrenamiento con el que colaboramos. Allí podrás llevar tus entrenamientos al siguiente nivel. </span>
                     </div>
                 </li>
               </ul>
@@ -42,7 +43,7 @@ const FeaturesSection = () => {
           </div>
           <img
             alt="Workout screenshot"
-            src="/src/assets/workoutScreenshot.png"
+            src={workoutScreenshot}
             width={2432}
             height={1442}
             className="w-full max-w-2xl rounded-xl ring-1 shadow-xl ring-gray-400/10 sm:w-[48rem] md:w-[57rem] lg:w-[60rem] xl:w-[70rem] lg:mt-10 hover:transition duration-500 hover:scale-105"

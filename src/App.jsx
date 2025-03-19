@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import "./App.css";
 import HomePage from "./pages/HomePage";
 import WorkoutsPage from "./pages/WorkoutsPage";
@@ -13,6 +14,12 @@ import CreateWorkout from "./pages/CreateWorkout";
 
 
 function App() {
+
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <div>
       <NavBar className="flex flex-col min-h-screen" />

@@ -1,4 +1,6 @@
 import csgFeature from "../assets/csgFeature.png";
+import { Link } from "react-router-dom";
+
 
 const CsgFeature = () => {
   return (
@@ -13,14 +15,19 @@ const CsgFeature = () => {
         </div>
         <div className="max-w-2xl md:w-1/2 space-y-6 text-center md:text-left md:ml-20">
           <h2 className="text-2xl md:text-3xl font-bold">
-            <span className="text-red-500">CSG</span> Studio: Tu centro de entrenamiento
+            <span className="text-red-500">CSG</span> Studio: Tu centro de
+            entrenamiento
           </h2>
           <p className="text-gray-300 text-sm md:text-base">
             En nuestra aplicación de workouts, queremos destacar la colaboración
-            con <a href="/CsgStudio" className="hover:underline"><strong>CSG Studio</strong></a>, un centro de entrenamiento
-            profesional que lleva el rendimiento físico al siguiente nivel.
-            Descubre cómo CSG Studio complementa tu experiencia de entrenamiento
-            con instalaciones de calidad y entrenadores expertos
+            con{" "}
+            <Link to="/CsgStudio" className="hover:underline">
+              <strong>CSG Studio</strong>
+            </Link>
+            , un centro de entrenamiento profesional que lleva el rendimiento
+            físico al siguiente nivel. Descubre cómo CSG Studio complementa tu
+            experiencia de entrenamiento con instalaciones de calidad y
+            entrenadores expertos
           </p>
           <div className="space-y-4">
             <FeatureItem
@@ -47,12 +54,12 @@ const FeatureItem = ({ title, description }) => {
     <div className="bg-[#1d1e1f] p-4 rounded-lg  text-center md:text-left shadow-sm shadow-gray-300 hover:transition duration-500 hover:scale-105 active:transition active:scale-105 ">
       <h3 className="text-lg md:text-xl font-semibold text-white">{title}</h3>
       <p className="text-gray-400 mt-1 text-sm md:text-base">{description}</p>
-      <a
-        href="/CsgStudio"
+      <Link
+        to="/CsgStudio"
         className="text-red-400 mt-2 inline-block hover:underline text-sm md:text-base "
       >
         Learn more →
-      </a>
+      </Link>
     </div>
   );
 };
