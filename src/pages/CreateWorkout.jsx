@@ -70,7 +70,7 @@ const CreateWorkout = () => {
               type="text"
               value={type}
               onChange={(e) => setType(e.target.value)}
-              className="mt-2 p-2 border rounded-lg w-full"
+              className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Ej. Cardio, Fuerza, Flexibilidad"
             />
           </div>
@@ -83,7 +83,7 @@ const CreateWorkout = () => {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="mt-2 p-2 border rounded-lg w-full"
+              className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Ej. Entrenamiento HIIT"
             />
           </div>
@@ -95,7 +95,7 @@ const CreateWorkout = () => {
               id="description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="mt-2 p-2 border rounded-lg w-full"
+              className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Detalles sobre el workout"
             />
           </div>
@@ -107,7 +107,7 @@ const CreateWorkout = () => {
               id="difficulty"
               value={difficulty}
               onChange={(e) => setDifficulty(e.target.value)}
-              className="mt-2 p-2 border rounded-lg w-full bg-red-600"
+              className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             >
               <option value="">Seleccionar Dificultad</option>
               <option value="Principiante">Principiante</option>
@@ -124,7 +124,7 @@ const CreateWorkout = () => {
               type="number"
               value={duration}
               onChange={(e) => setDuration(e.target.value)}
-              className="mt-2 p-2 border rounded-lg w-full"
+              className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Duración del workout en minutos"
             />
           </div>
@@ -136,7 +136,7 @@ const CreateWorkout = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full p-3 bg-gradient-to-r from-[#535050] to-[#3f3838] text-white font-semibold rounded-lg transition duration-300 hover:scale-105 cursor-pointer"
+            className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 cursor-pointer transition duration-500 hover:scale-105"
           >
             {loading ? "Cargando..." : "Crear Workout"}
           </button>
