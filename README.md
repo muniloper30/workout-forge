@@ -1,12 +1,33 @@
-# React + Vite
+# Workout Forge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Workout Forge** es una aplicación para crear y personalizar entrenamientos, diseñada para ofrecer flexibilidad y personalización en la forma en que los usuarios abordan sus rutinas de ejercicio. Los usuarios pueden registrarse, mantener sesión iniciada y gestionar su perfil, que incluye su nombre y una imagen de perfil. Además, integra un mapa del centro de entrenamiento, proporcionando a los usuarios información sobre la ubicación, horarios y servicios disponibles. Con una interfaz intuitiva y un diseño centrado en la experiencia del usuario, **Workout Forge** es la herramienta ideal para quienes desean llevar su entrenamiento al siguiente nivel.
 
-Currently, two official plugins are available:
+La aplicación interactúa con una API de workouts construida con **Node.js** y **Express**, y utiliza **Supabase** para la autenticación de usuarios y el almacenamiento de datos.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Características
 
-## Expanding the ESLint configuration
+- **Registro y Gestión de Perfil**: Los usuarios pueden registrarse, mantener sesión iniciada y almacenar su nombre e imagen de perfil, utilizando la autenticación de **Supabase**.
+- **Creación de Entrenamientos**: Los usuarios pueden crear y personalizar sus propios entrenamientos.
+- **API de Workouts**: La aplicación consume una API RESTful construida con **Node.js** y **Express** que gestiona los entrenamientos y otros datos relacionados.
+- **Próximas Funcionalidades**: En el futuro, se añadirá la opción de guardar entrenamientos favoritos y la capacidad de crear entrenamientos personalizados directamente desde el perfil del usuario.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tecnologías
+
+Este proyecto utiliza las siguientes tecnologías:
+
+- **React**: Librería para construir interfaces de usuario.
+- **Vite**: Un motor de desarrollo ultra rápido para aplicaciones modernas.
+- **Node.js**: Plataforma de backend para ejecutar JavaScript en el servidor.
+- **Express**: Framework para Node.js para gestionar las rutas de la API.
+- **Supabase**: Base de datos en tiempo real y solución de autenticación basada en **PostgreSQL**.
+- **Tailwind CSS**: Framework de CSS para diseñar interfaces rápidamente con clases utilitarias.
+- **Lucide React**: Biblioteca de iconos ligeros y personalizables para React.
+- **ESLint**: Herramienta de linting para mantener la calidad del código.
+
+## Instalación
+
+### Requisitos previos
+
+- **Node.js** (versión 16 o superior).
+- **npm** (gestor de paquetes de Node.js).
+- **Cuenta de Supabase**, para configurar la base de datos y autenticación de usuarios.
