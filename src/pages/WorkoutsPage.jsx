@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
+
 
 const WorkoutsPage = () => {
   // Estados principales
@@ -68,7 +71,7 @@ const WorkoutsPage = () => {
           <p className="text-center xl:text-xl">¡Inicia Ahora! Echa un Vistazo a Nuestros Entrenamientos</p>
           <p className="text-center text-xs xl:text-lg font-bold">
             ¿ Quieres crear tu workout personalizado ?{" "}
-            <span><a className="hover:underline text-red-500" href="/CreateWorkout">Pincha Aquí!</a></span>
+            <span><Link className="hover:underline text-red-500" to="/CreateWorkout">Pincha Aquí!</Link></span>
           </p>
         </div>
 
